@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <!-- Light Theme colors -->
+    <color name="primary_purple">#805C85</color>
+    <color name="primary_purple_variant">#906FAA</color>
+    <color name="secondary_purple">#DBB7E0</color>
+    <color name="primary_pink">#E06CB7</color>
+    <color name="background_blue">#E4DEFF</color>
+    <color name="color_best_tip">#598566</color>
+    <color name="color_worst_tip">#634242</color>
+<!--    Dark theme colors-->
+    <color name="primary_purple_dark">#C18BC8</color>
+    <color name="primary_purple_variant_dark">#B890D8</color>
+    <color name="secondary_purple_dark">#784480</color>
+    <color name="primary_pink_dark">#E06CB7</color>
+    <color name="background_blue_dark">#5A5378</color>
+    <color name="darkActionBar">#483449</color>
+    <color name="color_best_tip_dark">#94FFB3</color>
+    <color name="color_worst_tip_dark">#FF8C8C</color>
+</resources>
