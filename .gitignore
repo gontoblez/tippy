@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+/app/release/baselineProfiles/0/app-release.dm
+/app/release/baselineProfiles/1/app-release.dm
+/key.jks
+/app/release/output-metadata.json
+/app/release/Tippy-v1.0.apk
