@@ -5,7 +5,6 @@ import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
@@ -14,11 +13,9 @@ import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import android.graphics.drawable.ColorDrawable
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.BaseTransientBottomBar
@@ -26,8 +23,8 @@ import com.google.android.material.snackbar.Snackbar
 import java.util.Locale
 import kotlin.concurrent.thread
 import kotlin.math.round
+import kotlin.system.exitProcess
 
-private const val TAG = "MainActivity"
 private const val INITIAL_TIP_PERCENT = 15
 
 class MainActivity : AppCompatActivity() {
@@ -42,7 +39,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvTipDescription: TextView
     private lateinit var btnRoundUp: Button
     private lateinit var btnRoundDown: Button
-    private lateinit var ActionBar: ActionBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,11 +66,13 @@ class MainActivity : AppCompatActivity() {
         thread {
             while (true) {
                 Thread.sleep(180000)
-                Log.i(TAG, "Hi")
-                Snackbar.make(main, getString(R.string.bored_msg), 5000)
+                Snackbar.make(main, getString(R.string.bored_msg), 10000)
+                    .setBackgroundTint(getColor(R.color.secondary_purple))
+                    .setTextColor(getColor(R.color.darkActionBar))
+                    .setActionTextColor(getColor(R.color.background_blue_dark))
                     .setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_SLIDE) // transition type
                     .setAction(getString(R.string.quit)) {
-                        System.exit(0) // exit application
+                        exitProcess(0) // exit application
                     }.show()
             }
         }
@@ -89,7 +87,6 @@ class MainActivity : AppCompatActivity() {
 
         seekBarTip.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                Log.i(TAG, "onProgressChanged + $progress")
                 tipPercent.text = "$progress%"
                 computeTipAndTotal()
                 updateTipDescription(progress)
@@ -108,7 +105,6 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
             override fun afterTextChanged(s: Editable?) {
-                Log.i(TAG, "afterTextChanged $s")
                 computeTipAndTotal()
                 rounded = false
             }

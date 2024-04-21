@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Tippy" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your light theme here. -->
-        <item name="actionBarTheme">@style/ActionBar_ltr</item>
+<!--        <item name="actionBarTheme">@style/ActionBar_ltr</item>-->
         <item name="colorPrimary">@color/primary_purple</item>
         <item name="colorPrimaryVariant">@color/primary_purple_variant</item>
         <item name="colorOnPrimary">@color/white</item>
