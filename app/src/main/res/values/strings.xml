@@ -1,4 +1,23 @@
 <resources>
-    <string name="app_name">Tippy</string>
-    <string name="mode">Day</string>
+    <string name="app_name" translatable="false">Tippy</string>
+    <string name="mode" translatable="false">Day</string>
+    <string name="no_of_people">No. of people</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="split_by">Split By</string>
+    <string name="round_up">Round up</string>
+    <string name="round_down">Round Down</string>
+    <string name="base">Base</string>
+    <string name="tip">Tip</string>
+    <string name="total">Total</string>
+    <string name="made_with_by_nad" translatable="false">Made with 🤓 by Nad</string>
+    <string name="poor">Poor</string>
+    <string name="acceptable">Acceptable</string>
+    <string name="great">Great!</string>
+    <string name="amazing">Amazing!</string>
+    <string name="good">Good</string>
+    <string name="cannot_round_wo_ba">Cannot round without Bill Amount</string>
+    <string name="cannot_rd_wo_tip">Cannot round down without tip</string>
+    <string name="alrdy_rnd">Already rounded</string>
+    <string name="bored_msg">Bored? You can quit!</string>
+    <string name="quit">Quit</string>
 </resources>

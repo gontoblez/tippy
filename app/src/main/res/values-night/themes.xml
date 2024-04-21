@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Tippy" parent="Theme.MaterialComponents.DayNight">
         <item name="colorSurface">@color/primary_purple</item>   <!--changes action bar color -->
+        <item name="actionBarTheme">@style/ActionBar_ltr</item>
         <item name="colorPrimary">@color/primary_purple</item>
         <item name="colorPrimaryVariant">@color/primary_purple_variant_dark</item>
         <item name="colorOnPrimary">@color/white</item>

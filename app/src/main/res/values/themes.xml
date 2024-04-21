@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Tippy" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your light theme here. -->
+        <item name="actionBarTheme">@style/ActionBar_ltr</item>
         <item name="colorPrimary">@color/primary_purple</item>
         <item name="colorPrimaryVariant">@color/primary_purple_variant</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -14,4 +15,10 @@
     </style>
 
     <style name="Theme.Tippy" parent="Base.Theme.Tippy" />
+
+    <style name="ActionBar_ltr" parent="Base.Theme.Tippy">
+        <item name="android:layoutDirection">ltr</item>
+        <!-- white text in actionbar -->
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
 </resources>

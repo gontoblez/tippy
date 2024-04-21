@@ -23,6 +23,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
+import java.util.Locale
 import kotlin.concurrent.thread
 import kotlin.math.round
 
@@ -70,9 +71,9 @@ class MainActivity : AppCompatActivity() {
             while (true) {
                 Thread.sleep(180000)
                 Log.i(TAG, "Hi")
-                Snackbar.make(main, "Bored? You can quit!", 5000)
+                Snackbar.make(main, getString(R.string.bored_msg), 5000)
                     .setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_SLIDE) // transition type
-                    .setAction("Quit") {
+                    .setAction(getString(R.string.quit)) {
                         System.exit(0) // exit application
                     }.show()
             }
@@ -128,16 +129,16 @@ class MainActivity : AppCompatActivity() {
         btnRoundUp.setOnClickListener(object: OnClickListener{
             override fun onClick(v: View?) {
                 if (etBaseAmount.text.isEmpty()) {
-                    longToast("Cannot round without Bill Amount")
+                    longToast(getString(R.string.cannot_round_wo_ba))
                     return
                 } else if (rounded) {
-                    longToast("Already rounded")
+                    longToast(getString(R.string.alrdy_rnd))
                     return
                 }
                 val roundedTotal = round(calculateTotal()+0.4)
-                val newTip = "%.2f".format(calculateTip() + roundedTotal - calculateTotal())
+                val newTip = "%.2f".format(Locale.US, calculateTip() + roundedTotal - calculateTotal())
                 tvTipAmount.text = newTip
-                tvTotalAmount.text = "%.2f".format(roundedTotal)
+                tvTotalAmount.text = "%.2f".format(Locale.US, roundedTotal)  // use english numbers
                 rounded = true
             }
         })
@@ -145,19 +146,19 @@ class MainActivity : AppCompatActivity() {
         btnRoundDown.setOnClickListener(object: OnClickListener{
             override fun onClick(v: View?) {
                 if (etBaseAmount.text.isEmpty()) {
-                    longToast("Cannot round without Bill Amount")
+                    longToast(getString(R.string.cannot_round_wo_ba))
                     return
                 } else if (rounded) {
-                    longToast("Already rounded")
+                    longToast(getString(R.string.alrdy_rnd))
                     return
                 } else if (seekBarTip.progress==0) {
-                    longToast("Cannot round down without tip")
+                    longToast(getString(R.string.cannot_rd_wo_tip))
                     return
                 }
                 val roundedTotal = round(calculateTotal()-0.4)
-                val newTip = "%.2f".format(calculateTip() + roundedTotal - calculateTotal())
+                val newTip = "%.2f".format(Locale.US, calculateTip() + roundedTotal - calculateTotal())
                 tvTipAmount.text = newTip
-                tvTotalAmount.text = "%.2f".format(roundedTotal)
+                tvTotalAmount.text = "%.2f".format(Locale.US, roundedTotal) // use english numbers
                 rounded = true
             }
         })
@@ -169,8 +170,8 @@ class MainActivity : AppCompatActivity() {
             return
         }
         // 3. update the ui
-        tvTipAmount.text = "%.2f".format(calculateTip())
-        tvTotalAmount.text = "%.2f".format(calculateTotal())
+        tvTipAmount.text = "%.2f".format(Locale.US, calculateTip())   // use english numbers
+        tvTotalAmount.text = "%.2f".format(Locale.US, calculateTotal()) // use english numbers
     }
 
     // get tip
@@ -202,11 +203,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateTipDescription(tipPercent: Int) {
         val tipDescription = when (tipPercent) {
-            in 0..4 -> "Poor"
-            in 5..14 -> "Acceptable"
-            in 15..20 -> "Good"
-            in 20..24 -> "Great!"
-            else -> "Amazing!"
+            in 0..4 -> getString(R.string.poor)
+            in 5..14 -> getString(R.string.acceptable)
+            in 15..20 -> getString(R.string.good)
+            in 20..24 -> getString(R.string.great)
+            else -> getString(R.string.amazing)
         }
         tvTipDescription.text = tipDescription
         // update color based on tip percent

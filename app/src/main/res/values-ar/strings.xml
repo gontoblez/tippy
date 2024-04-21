@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_of_people">عدد الأشخاص</string>
+    <string name="bill_amount">قيمة الفاتورة</string>
+    <string name="split_by">تقسيم على</string>
+    <string name="round_up">تقريب للأعلى</string>
+    <string name="round_down">تقريب للأسفل</string>
+    <string name="base">قيمة الفاتورة</string>
+    <string name="tip">قيمة البقشيش</string>
+    <string name="total">المجموع</string>
+    <string name="poor">سيء</string>
+    <string name="acceptable">مقبول</string>
+    <string name="great">عظيم!</string>
+    <string name="amazing">رائع!</string>
+    <string name="good">جيد</string>
+    <string name="cannot_round_wo_ba">أدخل قيمة الفاتورة أولا</string>
+    <string name="cannot_rd_wo_tip">لا يمكن التقريب للأسفل بدون نسبة بقشيش</string>
+    <string name="alrdy_rnd">قُرب سابقا</string>
+    <string name="bored_msg">هل مللت؟ يمكنك الخروج من التطبيق!</string>
+    <string name="quit">أخرج</string>
+</resources>
